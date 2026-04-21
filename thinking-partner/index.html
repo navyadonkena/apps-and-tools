@@ -7,10 +7,22 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Key setup overlay — shown when no key is stored -->
+  <div id="key-overlay" class="key-overlay hidden">
+    <div class="key-box">
+      <h2>Set up your API key</h2>
+      <p>This tool uses Google Gemini (free). Paste your key below — it stays in your browser only.</p>
+      <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Get a free key from Google AI Studio →</a>
+      <input id="key-input-overlay" type="password" placeholder="Paste your Gemini API key" />
+      <button onclick="saveKey()">Save and continue</button>
+    </div>
+  </div>
+
   <div class="container">
     <header>
       <h1>Thinking Partner</h1>
       <p class="subtitle">Drop a raw idea. The council will think it through.</p>
+      <button class="key-btn" onclick="showKeyOverlay()" title="Change API key">API key</button>
     </header>
 
     <main>

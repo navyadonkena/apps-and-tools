@@ -52,8 +52,11 @@ exports.handler = async (event) => {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
-  const { messages } = JSON.parse(event.body);
-  const apiKey = process.env.GEMINI_API_KEY;
+  const { messages, apiKey } = JSON.parse(event.body);
+
+  if (!apiKey) {
+    return { statusCode: 400, body: JSON.stringify({ error: 'No API key provided.' }) };
+  }
 
   const res = await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
