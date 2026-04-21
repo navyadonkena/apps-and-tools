@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thinking Partner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Thinking Partner</h1>
+      <p class="subtitle">Drop a raw idea. The council will think it through.</p>
+    </header>
+
+    <main>
+      <div id="chat" class="chat"></div>
+
+      <div class="input-area">
+        <textarea
+          id="input"
+          placeholder="Type your idea here — however raw or incomplete..."
+          rows="4"
+          autofocus
+        ></textarea>
+        <button id="submit" onclick="send()">Run the council</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
